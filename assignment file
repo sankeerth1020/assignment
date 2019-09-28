@@ -12,10 +12,10 @@ string shift(string str, int m)
     { 
         
         if (isupper(str[i])) 
-            result += char(int(str[i]+m-65)%26 +65); 
+            result += char((int(str[i])+m-65)%26 +65); 
    
     else
-        result += char(int(str[i]+m-97)%26 +97); 
+        result += char((int(str[i])+m-97)%26 +97); 
     } 
   
     return result; 
