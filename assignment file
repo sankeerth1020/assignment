@@ -1,1 +1,41 @@
 
+#include <iostream>
+#include <string>
+using namespace std;
+
+string shift(string str, int m) 
+{ 
+    string result = ""; 
+  
+   
+    for (int i=0;i<str.length();i++) 
+    { 
+        
+        if (isupper(str[i])) 
+            result += char(int(str[i]+m-65)%26 +65); 
+   
+    else
+        result += char(int(str[i]+m-97)%26 +97); 
+    } 
+  
+    return result; 
+} 
+  
+
+int main() 
+{ 
+    string str;
+    cout << "Enter the string ";
+    cin >> str;
+    int m; 
+    cout << "Enter the number to shift ";
+    cin >> m;
+    cout << "String : " << str; 
+    cout << "\nShift: " << m; 
+    string str1= shift(str, m);
+    cout << "\nShifted string: " << str1;
+    m=m%26;
+    string str2= shift(str1,26-m);
+    cout << "\nReshifted string: " << str2;
+    return 0; 
+} 
